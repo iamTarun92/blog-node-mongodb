@@ -6,10 +6,11 @@
   </head>
   <body>
     <%- include('./partials/nav') %>
-
     <div class="container mt-3">
       <div class="row row-cols-4">
-        <% blogs.forEach(blog => { %>
+        <% if (!blogs.length){ %>
+        <h3>No data found.</h3>
+        <% } %> <% blogs.forEach(blog => { %>
         <div class="col">
           <div class="card col" style="width: 18rem">
             <img src="<%= blog.coverImageURL %>" class="card-img-top" />
